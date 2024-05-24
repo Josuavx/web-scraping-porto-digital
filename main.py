@@ -29,7 +29,7 @@ browser.find_element(By.XPATH, "//h3[text()='Porto Digital - Recife']").click()
 
 browser.find_element(By.XPATH, '//a[@class="header-link" and @href="/noticias"]').click()
 
-wait.until(EC.visibility_of_element_located(By.XPATH, '//ul[@class="columnCount2"]'))
+wait.until(EC.visibility_of_element_located((By.XPATH, '//ul[@class="columnCount2"]')))
 elemento_scroll = browser.find_element(By.XPATH, '//ul[@class="columnCount2"]')
 
 print(elemento_scroll)
@@ -38,9 +38,15 @@ browser.execute_script("arguments[0].scrollIntoView();", elemento_scroll)
 sleep(5)
 lista_noticias = browser.find_elements(By.XPATH, '//ul[@class="columnCount2"]/*')
 
-print(f'Lista: {lista_noticias}')
 for noticia in lista_noticias:
-    classificacao = noticia.find_element(By.XPATH, './/div[@class="news-body"]')
+    body = noticia.find_element(By.XPATH, './/div[@class="news-body"]')
+    classificacao = body.find_element(By.XPATH, './/div[@class="news-content"]/span[1]')
+    titulo = body.find_element(By.XPATH, './/div[@class="news-content"]/h3')
+    data = body.find_element(By.XPATH, './/span[@class="news-date"]')
+    
     print(classificacao.get_attribute('textContent'))
+    print(titulo.get_attribute('textContent').replace('          ', ''))
+    print(data.get_attribute('textContent'))
+    print('---------------------------------------')
 
 sleep(100)
