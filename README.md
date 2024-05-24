@@ -1,6 +1,6 @@
-# Nome do Projeto
+# Web Scraping Porto Digital
 
-Descrição breve do projeto.
+O projeto é um simples web scraping do site do porto digital.
 
 ## Clonando o Repositório
 
