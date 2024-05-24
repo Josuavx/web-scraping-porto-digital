@@ -7,8 +7,8 @@ O projeto é um simples web scraping do site do porto digital.
 Para clonar o repositório, execute o seguinte comando no terminal:
 
 ```bash
-git clone https://github.com/SEU_USUARIO/NOME_DO_REPOSITORIO.git
-cd NOME_DO_REPOSITORIO
+git clone https://github.com/Josuavx/web-scraping-porto-digital.git
+cd web-scraping-porto-digital
 ```
 
 ## Criando um ambiente virtual
